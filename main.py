@@ -27,7 +27,7 @@ app.secret_key = 'secret'
 
 # user = auth.create_user_with_email_and_password(email,password)
 
-@app.route('/login', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     if request.method == 'POST':
         email = request.form.get('email')
@@ -42,12 +42,13 @@ def hello_world():
     return render_template('inicio.html')
 
 #@app.route('/prueba')
-@app.route('/')
+@app.route('/prueba')
 def prueba():
     if 'user' in session:
         lista_Comida = db.child("clientes").get().val()
         return render_template("pedidos.html", elementos_Comida=lista_Comida.values())
-
+    else:
+        return render_template('inicio.html')
 
 # Ruta para observar la información de los sensores#
 

@@ -1,0 +1,53 @@
+{% extends 'estructura.html' %}
+
+{% block contenido_principal%}
+
+{% block titulo%}
+                     <title>Registro de Pedidos echos por el usuario</title>
+{% endblock%}
+    <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">Menú</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">Pedidos</li>
+                        </ol>
+
+                        <div class="card mb-4">
+                            <div class="card-header">
+                                <i class="fas fa-table me-1"></i>
+                               Pedidos
+                            </div>
+                            <div class="card-body">
+                                <table id="datatablesSimple">
+                                    <thead>
+                                        <tr>
+                                            <th>Contadores</th>
+                                            <th>#</th>
+
+
+                                        </tr>
+                                    </thead>
+                                    <tfoot>
+                                        <tr>
+                                             <th>Contadores</th>
+                                             <th>#</th>
+
+                                        </tr>
+                                    </tfoot>
+                                   <tbody>
+                                   <!-- aca colocaremos los datos de firebase -->
+
+                                   {% for datos in elementos_contador %}
+                                   <tr>
+                                       <td>{{ datos.contador }}</td>
+
+                                   {% endfor %}
+                                   </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+    </main>
+
+{% endblock %}
+

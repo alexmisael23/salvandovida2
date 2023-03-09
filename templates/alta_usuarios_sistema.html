@@ -1,0 +1,47 @@
+{% extends 'estructura.html' %}
+
+{% block contenido_principal%}
+
+{% block titulo%}
+                     <title>Registro de Usuarios de Sistemas</title>
+{% endblock%}
+    <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Registro de usuarios al sistema</h3></div>
+                                    <div class="card-body">
+                                        <form method="post" action="{{ url_for('guardarusuariosistema' )}}">
+                                            <div class="row mb-3">
+                                                <div class="col-md-6">
+
+                                                </div>
+                                                <div class="col-md-6">
+
+                                                </div>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="usuario" name="usuario" type="text" placeholder="name@example.com" required/>
+                                                <label for="inputNombre">Usuario</label>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <div class="form-floating mb-3">
+                                                    <div class="form-floating mb-3 mb-md-0">
+                                                        <input class="form-control" id="password" name="password" type="password" placeholder="name@example.com" required/>
+                                                        <label for="inputCodigo">Contraseña</label>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                            <div class="mt-4 mb-0">
+                                                <button class="btn-success">Registrar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+{% endblock %}
